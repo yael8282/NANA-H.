@@ -1,0 +1,254 @@
+.order-main {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px 20px;
+}
+.form-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 590px;
+    padding: 44px 46px 38px;
+    text-align: right;
+    direction: rtl;
+    color: var(--brown);
+    border-radius: 28px;
+    overflow: hidden;
+    background: linear-gradient(165deg, #FFFFFF, #FFF3EE);
+    border: 1px solid rgba(201, 139, 126, .3);
+    box-shadow: 0 32px 70px rgba(122, 46, 62, .20);
+    animation: formIn 1s var(--spring) both;
+}
+/* פס צבע נע בראש הטופס */
+.form-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 7px;
+    background: linear-gradient(90deg, #D4A574, #C98B7E, #A8566A, #C98B7E, #D4A574);
+    background-size: 250% 100%;/*מגדיל את הרקע כדי לאפשר תנועה*/
+    animation: flowLine 5s linear infinite;
+}
+.form-wrapper h1 {
+    margin: 0 0 28px;
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #A8566A, #7A2E3E, #C98B7E, #A8566A);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;/*שתי שורות אותו דבר כדי לתמוך בדפדפנים שונים*/
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: flowLine 6s linear infinite;
+}
+.form-wrapper h1::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    margin: 14px auto 0;
+    border-radius: 4px;
+    background: var(--grad-rose);
+    animation: widen 2.5s ease-in-out infinite;
+}
+/*אנימציה של הקו*/
+@keyframes widen {
+    0%, 100% { width: 50px; }
+    50%      { width: 110px; }
+}
+/* שדות הטופס */
+.order-form label {
+    display: block;
+    margin-top: 18px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--plum);
+}
+/*כניסת התוויות*/
+.order-form > label,
+.order-form > input,
+.order-form > select,
+.order-form > textarea {
+animation: fieldIn .6s var(--ease) both;
+}
+.order-form > :nth-child(-n+4)   { animation-delay: .20s; }
+.order-form > :nth-child(n+5):nth-child(-n+8)  { animation-delay: .35s; }
+.order-form > :nth-child(n+9)    { animation-delay: .50s; }
+.order-form input,
+.order-form select,
+.order-form textarea {
+    width: 100%;
+    margin-top: 7px;
+    padding: 13px 15px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--plum);
+    background: #FFFDFC;
+    border: 1.5px solid #EBD5CC;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--spring), background-color .3s var(--ease);
+}
+.order-form input::placeholder,
+.order-form textarea::placeholder { color: #BBA59E; }/*צבע הטקסט שלפני ההקלדה*/
+.order-form input:hover,
+.order-form select:hover,
+.order-form textarea:hover { border-color: var(--gold); }
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+    background: var(--white);
+    border-color: var(--rose-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 4px rgba(201, 139, 126, .25), 0 10px 20px rgba(122, 46, 62, .12);
+}
+.order-form textarea { 
+    height: 110px; resize: vertical; /*מאפשר לשנות את הגובה בלבד*/
+}
+/* אמצעי תשלום */
+.payment-title {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--rose-deep);
+}
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0 20px;
+}
+.payment-methods label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--plum);
+    background: #FFFDFC;
+    border: 1.5px solid #EBD5CC;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all .35s var(--spring);
+}
+.payment-methods label:hover {
+    border-color: var(--rose-deep);
+    transform: translateY(-3px) scale(1.04);
+}
+.payment-methods label:has(input:checked) {
+    color: var(--white);
+    background: var(--grad-rose);
+    border-color: transparent;
+    box-shadow: 0 8px 18px rgba(168, 86, 106, .45);
+    transform: scale(1.06);
+}
+.payment-methods input[type="radio"] {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    accent-color: var(--plum);
+    box-shadow: none;
+}
+.credit-details {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 6px 20px 20px;
+    background: linear-gradient(180deg, #FFF6F1, #FBE7E0);
+    border: 1.5px dashed var(--gold);
+    border-radius: 16px;
+}
+/* כפתורים */
+.form-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 28px;
+}
+.submit-btn,
+.reset-btn { flex: 1; }
+.submit-btn {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    overflow: hidden;
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-align: center;
+    color: var(--white);
+    background: var(--grad-rose);
+    background-size: 200% 200%;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 12px 26px rgba(168, 86, 106, .45);
+    transition: transform .4s var(--spring), box-shadow .35s var(--ease);
+    animation: gradShift 5s ease infinite;
+}
+/* ברק שעובר על הכפתור */
+.submit-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .55), transparent);
+    transform: translateX(260%) skewX(-18deg);
+    animation: btnSheen 3.8s ease-in-out infinite;
+}
+.submit-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 18px 32px rgba(122, 46, 62, .5);
+}
+.submit-btn:active { transform: translateY(0) scale(.98); }
+/* כפתור איפוס — משני */
+.submit-btn[type="reset"] {
+    color: var(--rose-deep);
+    background: transparent;
+    border: 2px solid var(--rose);
+    box-shadow: none;
+    animation: none;
+}
+.submit-btn[type="reset"]::after { display: none; }
+.submit-btn[type="reset"]:hover {
+    color: var(--white);
+    background: var(--grad-rose);
+    border-color: transparent;
+    box-shadow: 0 14px 28px rgba(168, 86, 106, .4);
+}
+@keyframes btnSheen {
+    0%, 55% { transform: translateX(260%) skewX(-18deg); }
+    100%    { transform: translateX(-450%) skewX(-18deg); }
+}
+@keyframes formIn {
+    from { opacity: 0; transform: translateY(60px) scale(.94); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fieldIn {
+    from { opacity: 0; transform: translateX(26px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes flowLine {
+    from { background-position: 0% 0; }
+    to   { background-position: -250% 0; }
+}
+@keyframes gradShift {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+}
+@media (max-width: 600px) {
+    .order-main { padding: 30px 12px 10px; }
+    .form-wrapper { padding: 34px 22px 28px; border-radius: 20px; }
+    .form-wrapper h1 { font-size: 29px; }
+    .form-buttons { flex-direction: column; gap: 12px; }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NANA H.</title>
+    <link rel="stylesheet" href="../css/style-common.css">
+    <link rel="stylesheet" href="../css/order.css">
+    <link rel="icon" href="../favicon.ico.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+              <img src="../assets/images/logo.png" alt="NANA H.">
+            </a>
+        </div>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="../index.html">דף הבית</a></li>
+            <li><a href="about.html">אודות</a></li>
+            <li><a href="hairbands.html">קשתות</a></li>
+            <li><a href="kippahs.html">כיפות</a></li>
+            <li><a href="accessories.html">אקססוריז</a></li>
+            <li><a href="#">להזמנות</a></li>
+            <li><a href="../assets/pdf/price list.pdf">מחירון</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="order-main main content">
+<div class="form-wrapper">
+    <h1>טופס הזמנה</h1>
+     <form action="success.html" method="POST">
+        <div class="order-form" onsubmit="return validateForm()" >
+    <label>שם מלא</label>
+    <input type="text" placeholder="הקלד שם מלא" required>
+    <label>טלפון</label>
+    <input type="tel" placeholder="הקלד מספר טלפון" required>
+    <label>אימייל</label>
+    <input type="email" placeholder="example@gmail.com" required>
+    <label>בחירת מוצר</label>
+    <select>
+        <option value="">בחר מוצר...</option>
+        <option>קשת קרושה</option>
+        <option>קשת ג'ינס פראנזים-שחור</option>
+        <option>קשת פפיון תחרה פרחים-שחור</option>
+        <option>קשת פפיון קטיפה - אדום</option>
+        <option>קשת ג'ינס פראנזים-קאמל</option>
+        <option>קשת שטוחה משובץ - בורדו</option>
+        <option>כיפה שילוב פשתן - אבן</option>
+        <option>כיפה ג'ינס - בהיר</option>
+        <option>כיפה פשתן - ירוק</option>
+        <option>כיפה כותנה פסים - בז'</option>
+        <option>כיפה בייסיק - סגול</option>
+        <option>כיפה פשתן - ירוק מנטה</option>
+        <option>כיפה עור - כחול כהה</option>
+        <option>כיפה עור - חום</option>
+        <option>סרט ניובורן פפיון קטיפה</option>
+        <option>סרט בייבי טול נקודות</option>
+        <option>כובע 2 פונפונים-בורדו</option>
+        <option>קליפס מלבן פרח</option>
+        <option>מחזיק מוצץ קשר</option>
+        <option>פפיון בנים פשתן</option>
+        <option>שמיכה וואש - כחול</option>
+        <option>גרביים ריב פסים</option>
+    </select>
+    <label>כמות</label>
+    <input type="number" min="1" value="1">
+    <label>תעודת זהות</label>
+    <input type="text" placeholder="9 ספרות" id="idNumber" maxlength="9" required>
+    <label class="payment-title">צורת תשלום</label>
+        <div class="payment-methods">
+          <label><input type="radio" name="pay" value="credit" required> אשראי</label>
+          <label><input type="radio" name="pay" value="cash"> מזומן</label>
+          <label><input type="radio" name="pay" value="bit"> ביט</label>
+        </div>
+        <div class="credit-details">
+          <label>מספר אשראי</label>
+          <input type="text" id="cardNumber" placeholder="16 ספרות" maxlength="16">
+          <label>תוקף (MM/YY)</label>
+          <input type="text" id="expDate" placeholder="לדוגמה: 08/27" maxlength="5">
+          <label>CVV (3 ספרות)</label>
+          <input type="text" id="cvv" placeholder="3 ספרות" maxlength="3">
+        </div>
+    <label>הערות להזמנה</label>
+    <textarea placeholder="כתוב כאן הערות נוספות.."></textarea>
+    <div class="form-buttons">
+          <button class="submit-btn">לשליחת ההזמנה</button>
+          <button type="reset" class="submit-btn">איפוס</button>
+        </div>
+</div>
+     </form>
+</div>
+</main>
+<!-- תגית פוטר (תחתית העמוד) -->
+<footer class="site-footer">
+    <div class="footer-wrapper">
+        <div class="footer-contact">
+            <p>.Yael NANA H &copy;</p>
+            <p>מרכז מסחרי פינת חמד, שמגר 21 ירושלים</p>
+            <p>nanah.fashion@gmail.com</p>
+            <p>להזמנות: 053-3127373</p>
+            <p><a href="about.html">אודות</a></p>
+        </div>
+        <div class="footer-logo">
+            <img src="../assets/images/logo.png" alt="NANA H. Logo">
+        </div>
+    </div>
+</footer>
+<img class="fixed-image" src="../assets/images/32.png" alt="תמונה קבועה - סל קניות">
+</body>
+</html>
